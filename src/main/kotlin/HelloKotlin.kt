@@ -1,11 +1,13 @@
-class HelloKotlin
+import java.lang.StringBuilder
 
-class Student
+fun <T> joinToString(collection: Collection<T>, separator: String, prefix: String, postfix: String): String
 {
-    val name: String = "zlfn"
-    fun printName()
+    val result = StringBuilder(prefix)
+    for((index, element) in collection.withIndex())
     {
-        println("arseirsatnostrneoietniosar")
+        if (index > 0) result.append(separator)
+        result.append(element)
     }
-
+    result.append(postfix)
+    return result.toString()
 }
